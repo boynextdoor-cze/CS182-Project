@@ -132,3 +132,4 @@ dmypy.json
 references/
 *.pdf
 report/*.synctex.gz
+.DS_Store
