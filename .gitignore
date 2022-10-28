@@ -133,3 +133,4 @@ references/
 *.pdf
 report/*.synctex.gz
 .DS_Store
+data/
