@@ -133,4 +133,12 @@ references/
 *.pdf
 report/*.synctex.gz
 .DS_Store
-data/
+data/ImageNet_LT
+data/__pycache__
+
+logs
+*pkl
+*pyc
+.vscode
+*.sh
+runs
