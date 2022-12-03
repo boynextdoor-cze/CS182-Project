@@ -7,16 +7,16 @@
 
 
 % ready for submission
-\usepackage{neurips_2022}
+%\usepackage{neurips_2022}
 
 
 % to compile a preprint version, e.g., for submission to arXiv, add add the
 % [preprint] option:
-%     \usepackage[preprint]{neurips_2022}
+%\usepackage[preprint]{neurips_2022}
 
 
 % to compile a camera-ready version, add the [final] option, e.g.:
-%     \usepackage[final]{neurips_2022}
+\usepackage[final]{neurips_2022}
 
 
 % to avoid loading the natbib package, add option nonatbib:
@@ -25,16 +25,20 @@
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
+\usepackage[colorlinks,linkcolor=red]{hyperref}       % hyperlinks
 \usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 \usepackage{xcolor}         % colors
+\usepackage{amsmath}
+\usepackage[english]{babel}
+
+\urlstyle{rm}
 
 
-\title{Formatting Instructions For NeurIPS 2022}
+\title{A Two-stage Solution for the Long-tail Distribution of Image Classification Datasets}
 
 
 % The \author macro works with any number of authors. There are two commands
@@ -46,36 +50,21 @@
 % \AND instead of \And before the third author name.
 
 
-\author{%
-  David S.~Hippocampus\thanks{Use footnote for providing further information
-    about author (webpage, alternative address)---\emph{not} for acknowledging
-    funding agencies.} \\
-  Department of Computer Science\\
-  Cranberry-Lemon University\\
-  Pittsburgh, PA 15213 \\
-  \texttt{hippo@cs.cranberry-lemon.edu} \\
-  % examples of more authors
-  % \And
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
-  % \AND
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
-  % \And
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
-  % \And
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
+\author{
+  Zeen Chi \\
+  School of Information Science and Technology\\
+  ShanghaiTech University\\
+  Shanghai, China 201210 \\
+  \texttt{chize@shanghaitech.edu.cn} \\
+  \And
+  Zhongxiao Cong \\
+  School of Information Science and Technology \\
+  ShanghaiTech University\\
+  Shanghai, China 201210 \\
+  \texttt{congzhx@shanghaitech.edu.cn} \\
 }
+
+\newcommand*{\hyperlinkcite}[1]{\hyper@link{cite}{cite.#1}}
 
 
 \begin{document}
@@ -85,19 +74,13 @@
 
 
 \begin{abstract}
-  The abstract paragraph should be indented \nicefrac{1}{2}~inch (3~picas) on
-  both the left- and right-hand margins. Use 10~point type, with a vertical
-  spacing (leading) of 11~points.  The word \textbf{Abstract} must be centered,
-  bold, and in point size 12. Two line spaces precede the abstract. The abstract
-  must be limited to one paragraph.
+    The long-tail distribution of image classification datasets has significantly challenged the existing deep learning based classification models. Most classical works have proposed various solutions, including re-sampling the training data, re-weighting the loss function, and transfer learning from head to tail classes. However, most of the methods are applied with jointly learning the image feature extractor and classifier. According to a groundbreaking study in recent years, a surprisingly effective idea is to decouple the learning process into feature representation and classification, and train two stages separately. Following the idea, in this paper, we apply different classical methods to the two stages respectively, and systematically conduct experiments on the long-tailed benchmark ImageNet-LT, showing that the disentangled method outperforms the existing sampling strategies and designed losses to some extent. Our code is available at \url{https://github.com/boynextdoor-cze/CS182-Project}.
 \end{abstract}
 
 
-\section{Submission of papers to NeurIPS 2022}
+\section{Introduction}
 
-
-Please read the instructions below carefully and follow them faithfully.
-
+In the past 10 years, as a branch of machine learning and computer vision, image classification research has made significant advances, mainly driven by the appliance of deep convolutional neural networks (CNNs) like ResNet \cite{openlongtailrecognition}
 
 \subsection{Style}
 
@@ -466,7 +449,7 @@ Note that the Reference section does not count towards the page limit.
 \small
 
 
-[1] Alexander, J.A.\ \& Mozer, M.C.\ (1995) Template-based algorithms for
+\label{OLTR}[1] Alexander, J.A.\ \& Mozer, M.C.\ (1995) Template-based algorithms for
 connectionist rule extraction. In G.\ Tesauro, D.S.\ Touretzky and T.K.\ Leen
 (eds.), {\it Advances in Neural Information Processing Systems 7},
 pp.\ 609--616. Cambridge, MA: MIT Press.
@@ -585,5 +568,6 @@ Checklist section heading above along with the questions/answers below.
 Optionally include extra information (complete proofs, additional experiments and plots) in the appendix.
 This section will often be part of the supplemental material.
 
+\bibliography{ref}
 
 \end{document}
