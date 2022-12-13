@@ -135,6 +135,7 @@ report/*.synctex.gz
 .DS_Store
 data/ImageNet_LT
 data/__pycache__
+results.md
 
 logs
 *pkl

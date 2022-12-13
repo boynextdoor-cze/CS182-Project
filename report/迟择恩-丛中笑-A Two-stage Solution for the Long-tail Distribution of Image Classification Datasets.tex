@@ -25,7 +25,7 @@
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage[colorlinks,linkcolor=red]{hyperref}       % hyperlinks
+\usepackage[colorlinks]{hyperref}       % hyperlinks
 \usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
@@ -37,6 +37,7 @@
 
 \urlstyle{rm}
 
+\bibliographystyle{abbrvnat}
 
 \title{A Two-stage Solution for the Long-tail Distribution of Image Classification Datasets}
 
@@ -64,8 +65,6 @@
   \texttt{congzhx@shanghaitech.edu.cn} \\
 }
 
-\newcommand*{\hyperlinkcite}[1]{\hyper@link{cite}{cite.#1}}
-
 
 \begin{document}
 
@@ -74,13 +73,13 @@
 
 
 \begin{abstract}
-    The long-tail distribution of image classification datasets has significantly challenged the existing deep learning based classification models. Most classical works have proposed various solutions, including re-sampling the training data, re-weighting the loss function, and transfer learning from head to tail classes. However, most of the methods are applied with jointly learning the image feature extractor and classifier. According to a groundbreaking study in recent years, a surprisingly effective idea is to decouple the learning process into feature representation and classification, and train two stages separately. Following the idea, in this paper, we apply different classical methods to the two stages respectively, and systematically conduct experiments on the long-tailed benchmark ImageNet-LT, showing that the disentangled method outperforms the existing sampling strategies and designed losses to some extent. Our code is available at \url{https://github.com/boynextdoor-cze/CS182-Project}.
+    The long-tail distribution of image classification datasets has significantly challenged the existing deep learning-based classification models. Most classical works have proposed various solutions, including re-sampling the training data, re-weighting the loss function, and transfer learning from head-to-tail classes. However, most of the methods are applied by jointly learning the image feature extractor and classifier. According to a groundbreaking study in recent years, a surprisingly effective idea is to decouple the learning process into feature representation and classification and train two stages separately. Following the idea, in this paper, we apply different classical methods to the two stages respectively, and systematically conduct experiments on the long-tailed benchmark ImageNet-LT, showing that the disentangled method outperforms the existing sampling strategies and designed losses to some extent. Our code is available at \url{https://github.com/boynextdoor-cze/CS182-Project}.
 \end{abstract}
 
 
 \section{Introduction}
 
-In the past 10 years, as a branch of machine learning and computer vision, image classification research has made significant advances, mainly driven by the appliance of deep convolutional neural networks (CNNs) like ResNet \cite{openlongtailrecognition}
+In the past 10 years, as a branch of machine learning and computer vision, image classification research has made significant advances, mainly driven by the appliance of deep convolutional neural networks (CNNs) like ResNet \cite{he2016residual}
 
 \subsection{Style}
 
@@ -436,33 +435,10 @@ Do {\bf not} include this section in the anonymized submission, only in the fina
 
 \section*{References}
 
-
-References follow the acknowledgments. Use unnumbered first-level heading for
-the references. Any choice of citation style is acceptable as long as you are
-consistent. It is permissible to reduce the font size to \verb+small+ (9 point)
-when listing the references.
-Note that the Reference section does not count towards the page limit.
-\medskip
-
-
 {
 \small
 
-
-\label{OLTR}[1] Alexander, J.A.\ \& Mozer, M.C.\ (1995) Template-based algorithms for
-connectionist rule extraction. In G.\ Tesauro, D.S.\ Touretzky and T.K.\ Leen
-(eds.), {\it Advances in Neural Information Processing Systems 7},
-pp.\ 609--616. Cambridge, MA: MIT Press.
-
-
-[2] Bower, J.M.\ \& Beeman, D.\ (1995) {\it The Book of GENESIS: Exploring
-  Realistic Neural Models with the GEneral NEural SImulation System.}  New York:
-TELOS/Springer--Verlag.
-
-
-[3] Hasselmo, M.E., Schnell, E.\ \& Barkai, E.\ (1995) Dynamics of learning and
-recall at excitatory recurrent synapses and cholinergic modulation in rat
-hippocampal region CA3. {\it Journal of Neuroscience} {\bf 15}(7):5249-5262.
+\bibliography{ref}
 }
 
 
@@ -567,7 +543,5 @@ Checklist section heading above along with the questions/answers below.
 
 Optionally include extra information (complete proofs, additional experiments and plots) in the appendix.
 This section will often be part of the supplemental material.
-
-\bibliography{ref}
 
 \end{document}
