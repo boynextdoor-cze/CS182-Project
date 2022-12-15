@@ -40,7 +40,7 @@ def ImageNet():
     plt.text(600, 100, 'Tail Classes', fontsize=12, font='Times New Roman')
     plt.savefig('img/ImageNet_LT.jpg',dpi=300)
 
-def many():
+def result():
     labels = ['instance', 'class', 'square', 'progressive']
     joint = [65.9, 61.8, 64.3, 61.9]
     ncm = [56.6, 58.4, 59.0, 57.8]
@@ -50,83 +50,66 @@ def many():
     x = np.arange(len(labels))
     width = 0.2
 
-    plt.figure(figsize=(8,6))
-    plt.bar(x - 1.5*width, joint, width, label='Joint')
-    plt.bar(x - 0.5*width, ncm, width, label='NCM')
-    plt.bar(x + 0.5*width, crt, width, label='cRT')
-    plt.bar(x + 1.5*width, tau, width, label='Tau')
-    plt.ylabel('Accuracy %')
-    plt.title('Many-Shot')
-    plt.xticks(x, labels=labels)
-    plt.legend()
-    plt.show()
+    fig = plt.figure(figsize=(20,15))
+    axes = fig.subplots(2,2)
+    
+    axes[0,0].bar(x - 1.5*width, joint, width, label='Joint')
+    axes[0,0].bar(x - 0.5*width, ncm, width, label='NCM')
+    axes[0,0].bar(x + 0.5*width, crt, width, label='cRT')
+    axes[0,0].bar(x + 1.5*width, tau, width, label='Tau')
+    axes[0,0].set_ylabel('Accuracy %', fontsize=20)
+    axes[0,0].set_title('Many-Shot', fontsize=20)
+    axes[0,0].set_xticks(x, labels=labels, fontsize=20)
 
-def medium():
-    labels = ['instance', 'class', 'square', 'progressive']
+
     joint = [37.5, 40.1, 41.2, 43.2]
     ncm = [45.3, 40.1, 44.7, 43.0]
     crt = [46.2, 39.3, 44.5, 43.1]
     tau = [46.9, 40.2, 42.0, 43.3]
 
-    x = np.arange(len(labels))
-    width = 0.2
+    axes[0,1].bar(x - 1.5*width, joint, width, label='Joint')
+    axes[0,1].bar(x - 0.5*width, ncm, width, label='NCM')
+    axes[0,1].bar(x + 0.5*width, crt, width, label='cRT')
+    axes[0,1].bar(x + 1.5*width, tau, width, label='Tau')
+    axes[0,1].set_ylabel('Accuracy %', fontsize=20)
+    axes[0,1].set_title('Medium-Shot', fontsize=20)
+    axes[0,1].set_xticks(x, labels=labels, fontsize=20)
 
-    plt.figure(figsize=(8, 6))
-    plt.bar(x - 1.5*width, joint, width, label='Joint')
-    plt.bar(x - 0.5*width, ncm, width, label='NCM')
-    plt.bar(x + 0.5*width, crt, width, label='cRT')
-    plt.bar(x + 1.5*width, tau, width, label='Tau')
-    plt.ylabel('Accuracy %')
-    plt.title('Medium-Shot')
-    plt.xticks(x, labels=labels)
-    plt.legend()
-    plt.show()
 
-def few():
-    labels = ['instance', 'class', 'square', 'progressive']
     joint = [7.7, 15.5, 17.0, 19.4]
     ncm = [28.1, 18.0, 24.5, 21.6]
     crt = [27.4, 15.2, 22.0, 19.0]
     tau = [30.7, 15.3, 24.8, 19.2]
 
-    x = np.arange(len(labels))
-    width = 0.2
+    axes[1,0].bar(x - 1.5*width, joint, width, label='Joint')
+    axes[1,0].bar(x - 0.5*width, ncm, width, label='NCM')
+    axes[1,0].bar(x + 0.5*width, crt, width, label='cRT')
+    axes[1,0].bar(x + 1.5*width, tau, width, label='Tau')
+    axes[1,0].set_ylabel('Accuracy %', fontsize=20)
+    axes[1,0].set_title('Few-Shot', fontsize=20)
+    axes[1,0].set_xticks(x, labels=labels, fontsize=20)
+    
 
-    plt.figure(figsize=(8, 6))
-    plt.bar(x - 1.5*width, joint, width, label='Joint')
-    plt.bar(x - 0.5*width, ncm, width, label='NCM')
-    plt.bar(x + 0.5*width, crt, width, label='cRT')
-    plt.bar(x + 1.5*width, tau, width, label='Tau')
-    plt.ylabel('Accuracy %')
-    plt.title('Few-Shot')
-    plt.xticks(x, labels=labels)
-    plt.legend()
-    plt.show()
-
-def all():
-    labels = ['instance', 'class', 'square', 'progressive']
     joint = [44.4, 45.1, 46.8, 47.2]
     ncm = [47.3, 44.2, 47.5, 45.1]
     crt = [49.6, 44.5, 47.9, 46.7]
     tau = [49.4, 44.8, 47.6, 47.1]
 
-    x = np.arange(len(labels))
-    width = 0.2
+    axes[1,1].bar(x - 1.5*width, joint, width, label='Joint')
+    axes[1,1].bar(x - 0.5*width, ncm, width, label='NCM')
+    axes[1,1].bar(x + 0.5*width, crt, width, label='cRT')
+    axes[1,1].bar(x + 1.5*width, tau, width, label='Tau')
+    axes[1,1].set_ylabel('Accuracy %', fontsize=20)
+    axes[1,1].set_title('All', fontsize=20)
+    axes[1,1].set_xticks(x, labels=labels, fontsize=20)
 
-    plt.figure(figsize=(8, 6))
-    plt.bar(x - 1.5*width, joint, width, label='Joint')
-    plt.bar(x - 0.5*width, ncm, width, label='NCM')
-    plt.bar(x + 0.5*width, crt, width, label='cRT')
-    plt.bar(x + 1.5*width, tau, width, label='Tau')
-    plt.ylabel('Accuracy %')
-    plt.title('All')
-    plt.xticks(x, labels=labels)
-    plt.legend()
+    h,l = axes.flatten()[-1].get_legend_handles_labels()
+    handles = h
+    labels = l
+    fig.legend(handles, labels, loc = 'upper center', fontsize=20, ncol=4)
+    plt.savefig('img/result.jpg',dpi=300)
     plt.show()
 
 if __name__ == '__main__':
     #ImageNet()
-    many()
-    medium()
-    few()
-    all()
+    result()
