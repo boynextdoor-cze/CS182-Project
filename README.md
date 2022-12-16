@@ -1,4 +1,4 @@
-# CS182-Project
+# Introduction to Machine Learning (CS182) Final Project
 This repository contains the code for the final project of Introduction to Machine Learning (CS182), Fall 2022, ShanghaiTech University.
 
 Authors: Zeen Chi (chize@shanghaitech.edu.cn) and Zhongxiao Cong (congzhx@shanghaitech.edu.cn)
@@ -18,7 +18,7 @@ The code is based on [https://github.com/zhmiao/OpenLongTailRecognition-OLTR](ht
 
 Download the [ImageNet_2014](http://image-net.org/index) and place it in the `data/ImageNet_LT` directory, then change the `data_root` in `main.py` accordingly.
 
-### Representation Learning 
+### Image Representation
 
 1. Instance-balanced Sampling
 
