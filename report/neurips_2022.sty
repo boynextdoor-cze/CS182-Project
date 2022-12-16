@@ -68,8 +68,11 @@
 
 % load natbib unless told otherwise
 \if@natbib
-  \RequirePackage{natbib}
+  \RequirePackage[square,numbers]{natbib}
 \fi
+
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 
 % set page geometry
 \usepackage[verbose=true,letterpaper]{geometry}
