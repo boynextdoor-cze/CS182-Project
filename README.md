@@ -7,8 +7,6 @@ Almost all the code is based on [the research of Facebook](https://github.com/fa
 
 ### Requirements 
 
-The code is based on [https://github.com/zhmiao/OpenLongTailRecognition-OLTR](https://github.com/zhmiao/OpenLongTailRecognition-OLTR).
-
 * Python 3
 * [PyTorch](https://pytorch.org/) (version >= 0.4.1)
 * [yaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
